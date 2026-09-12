@@ -1,0 +1,1078 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Algorithmic Trading Simulator</title>
+
+    <link rel="stylesheet"
+          href="style.css">
+
+</head>
+
+<body>
+    <div class="app-shell">
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <div class="brand">
+            <div class="brand-logo">S</div>
+
+            <div>
+                <h2>STOK-MARK</h2>
+                <span>Trading Tracker</span>
+            </div>
+        </div>
+
+        <nav class="sidebar-nav">
+
+            <a href="#" class="nav-item active">
+                <span>📊</span>
+                Dashboard
+            </a>
+
+            <a href="#watchlist-section" class="nav-item">
+             <span>⭐</span>
+              Watchlist
+            </a>
+
+            <a href="#" class="nav-item">
+                <span>📈</span>
+                Analysis
+            </a>
+
+            <a href="#" class="nav-item">
+                <span>🤖</span>
+                Signals
+            </a>
+
+            <a href="#" class="nav-item">
+                <span>📋</span>
+                Trade History
+            </a>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+
+            <div class="system-status">
+                <span class="status-dot"></span>
+                System Online
+            </div>
+
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN APPLICATION -->
+
+    <main class="main-content">
+
+        <header class="topbar">
+
+            <div>
+                <h1>Dashboard</h1>
+                <p>Algorithmic Trading Tracker</p>
+            </div>
+
+            <div class="market-status">
+                <span class="status-dot"></span>
+                Market Data Connected
+            </div>
+
+        </header>
+
+
+        <!-- YOUR EXISTING CONTAINER STARTS HERE -->
+
+        <!-- HERO SECTION -->
+
+<section class="hero-section">
+
+    <div class="hero-content">
+
+        <div class="hero-badge">
+            <span class="status-dot"></span>
+            AI TRADING ENGINE ONLINE
+        </div>
+
+        <h1>
+            Smarter Trading.
+            <span>Data-Driven Decisions.</span>
+        </h1>
+
+        <p>
+            Track market trends, analyze technical indicators,
+            backtest strategies and generate explainable
+            BUY / HOLD / SELL signals.
+        </p>
+
+        <div class="hero-actions">
+
+            <button
+                class="hero-button"
+                onclick="document.getElementById('ticker').focus()"
+            >
+                Start Analysis
+            </button>
+
+            <div class="hero-stat">
+                <strong>AI</strong>
+                <span>Signal Engine</span>
+            </div>
+
+            <div class="hero-stat">
+                <strong>24/7</strong>
+                <span>Market Tracking</span>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- FINANCIAL AI VISUAL -->
+
+    <div class="hero-visual">
+
+        <div class="ai-orbit orbit-one"></div>
+        <div class="ai-orbit orbit-two"></div>
+
+        <div class="chart-grid"></div>
+
+        <div class="candles">
+
+            <span class="candle candle-1"></span>
+            <span class="candle candle-2"></span>
+            <span class="candle candle-3"></span>
+            <span class="candle candle-4"></span>
+            <span class="candle candle-5"></span>
+            <span class="candle candle-6"></span>
+            <span class="candle candle-7"></span>
+            <span class="candle candle-8"></span>
+
+        </div>
+
+        <div class="chart-line"></div>
+
+        <div class="ai-core">
+
+            <div class="core-ring"></div>
+
+            <div class="core-content">
+                <span>AI</span>
+                <small>ENGINE</small>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+   <!-- MARKET OVERVIEW -->
+
+<section class="market-overview">
+
+    <div class="market-card">
+
+        <div class="market-label">
+            STOCK
+        </div>
+
+        <div class="market-value" id="marketTicker">
+            —
+        </div>
+
+        <div class="market-subtext">
+            Selected Instrument
+        </div>
+
+    </div>
+
+
+    <div class="market-card">
+
+        <div class="market-label">
+            CURRENT PRICE
+        </div>
+
+        <div class="market-value">
+            ₹<span id="currentPrice">—</span>
+        </div>
+
+        <div class="market-subtext">
+            Latest available price
+        </div>
+
+    </div>
+
+
+    <div class="market-card">
+
+        <div class="market-label">
+            AI SIGNAL
+        </div>
+
+        <div
+            class="market-value signal-mini"
+            id="marketSignal"
+        >
+            —
+        </div>
+
+        <div class="market-subtext">
+            Algorithmic recommendation
+        </div>
+
+    </div>
+
+
+    <div class="market-card">
+
+        <div class="market-label">
+            CONFIDENCE
+        </div>
+
+        <div class="market-value">
+
+            <span id="marketConfidence">
+                —
+            </span>
+
+        </div>
+
+        <div class="market-subtext">
+            Signal strength
+        </div>
+
+    </div>
+
+    <!-- WATCHLIST SECTION -->
+
+<section id="watchlist-section" class="watchlist-section">
+
+    <div class="section-header">
+
+        <div>
+            <h2>⭐ Watchlist</h2>
+
+            <p>
+                Track selected stocks and monitor their market signals.
+            </p>
+        </div>
+
+        <div class="watchlist-count">
+            10 Stocks
+        </div>
+
+    </div>
+
+
+    <div class="watchlist-grid">
+
+
+        <!-- 1. RELIANCE -->
+
+        <div class="watchlist-card">
+
+            <div class="stock-top">
+
+                <div>
+                    <h3>Reliance Industries</h3>
+                    <span>RELIANCE.NS</span>
+                </div>
+
+                <div class="stock-icon">
+                    R
+                </div>
+
+            </div>
+
+            <div class="stock-price">
+                ₹<span>—</span>
+            </div>
+
+            <div class="stock-info">
+
+                
+
+                <div>
+                    <small>Confidence</small>
+                    <strong>—</strong>
+                </div>
+
+            </div>
+
+            <button
+                class="analyze-stock"
+                onclick="analyzeWatchlistStock('RELIANCE.NS')">
+
+                Analyze
+
+            </button>
+
+        </div>
+
+
+        <!-- 2. TCS -->
+
+        <div class="watchlist-card">
+
+            <div class="stock-top">
+
+                <div>
+                    <h3>Tata Consultancy Services</h3>
+                    <span>TCS.NS</span>
+                </div>
+
+                <div class="stock-icon">
+                    T
+                </div>
+
+            </div>
+
+            <div class="stock-price">
+                ₹<span>—</span>
+            </div>
+
+            <div class="stock-info">
+
+                
+
+                <div>
+                    <small>Confidence</small>
+                    <strong>—</strong>
+                </div>
+
+            </div>
+
+            <button
+                class="analyze-stock"
+                onclick="analyzeWatchlistStock('TCS.NS')">
+
+                Analyze
+
+            </button>
+
+        </div>
+
+
+        <!-- 3. INFOSYS -->
+
+        <div class="watchlist-card">
+
+            <div class="stock-top">
+
+                <div>
+                    <h3>Infosys</h3>
+                    <span>INFY.NS</span>
+                </div>
+
+                <div class="stock-icon">
+                    I
+                </div>
+
+            </div>
+
+            <div class="stock-price">
+                ₹<span>—</span>
+            </div>
+
+            <div class="stock-info">
+
+                
+
+                <div>
+                    <small>Confidence</small>
+                    <strong>—</strong>
+                </div>
+
+            </div>
+
+            <button
+                class="analyze-stock"
+                onclick="analyzeWatchlistStock('INFY.NS')">
+
+                Analyze
+
+            </button>
+
+        </div>
+
+
+        <!-- 4. HDFC BANK -->
+
+        <div class="watchlist-card">
+
+            <div class="stock-top">
+
+                <div>
+                    <h3>HDFC Bank</h3>
+                    <span>HDFCBANK.NS</span>
+                </div>
+
+                <div class="stock-icon">
+                    H
+                </div>
+
+            </div>
+
+            <div class="stock-price">
+                ₹<span>—</span>
+            </div>
+
+            <div class="stock-info">
+
+               
+
+                <div>
+                    <small>Confidence</small>
+                    <strong>—</strong>
+                </div>
+
+            </div>
+
+            <button
+                class="analyze-stock"
+                onclick="analyzeWatchlistStock('HDFCBANK.NS')">
+
+                Analyze
+
+            </button>
+
+        </div>
+
+
+        <!-- 5. ICICI BANK -->
+
+        <div class="watchlist-card">
+
+            <div class="stock-top">
+
+                <div>
+                    <h3>ICICI Bank</h3>
+                    <span>ICICIBANK.NS</span>
+                </div>
+
+                <div class="stock-icon">
+                    I
+                </div>
+
+            </div>
+
+            <div class="stock-price">
+                ₹<span>—</span>
+            </div>
+
+            <div class="stock-info">
+
+                
+
+                <div>
+                    <small>Confidence</small>
+                    <strong>—</strong>
+                </div>
+
+            </div>
+
+            <button
+                class="analyze-stock"
+                onclick="analyzeWatchlistStock('ICICIBANK.NS')">
+
+                Analyze
+
+            </button>
+
+        </div>
+
+
+        <!-- 6. SBI -->
+
+        <div class="watchlist-card">
+
+            <div class="stock-top">
+
+                <div>
+                    <h3>State Bank of India</h3>
+                    <span>SBIN.NS</span>
+                </div>
+
+                <div class="stock-icon">
+                    S
+                </div>
+
+            </div>
+
+            <div class="stock-price">
+                ₹<span>—</span>
+            </div>
+
+            <div class="stock-info">
+
+               
+                <div>
+                    <small>Confidence</small>
+                    <strong>—</strong>
+                </div>
+
+            </div>
+
+            <button
+                class="analyze-stock"
+                onclick="analyzeWatchlistStock('SBIN.NS')">
+
+                Analyze
+
+            </button>
+
+        </div>
+
+
+        <!-- 7. ITC -->
+
+        <div class="watchlist-card">
+
+            <div class="stock-top">
+
+                <div>
+                    <h3>ITC</h3>
+                    <span>ITC.NS</span>
+                </div>
+
+                <div class="stock-icon">
+                    I
+                </div>
+
+            </div>
+
+            <div class="stock-price">
+                ₹<span>—</span>
+            </div>
+
+            <div class="stock-info">
+
+               
+
+                <div>
+                    <small>Confidence</small>
+                    <strong>—</strong>
+                </div>
+
+            </div>
+
+            <button
+                class="analyze-stock"
+                onclick="analyzeWatchlistStock('ITC.NS')">
+
+                Analyze
+
+            </button>
+
+        </div>
+
+
+        <!-- 8. L&T -->
+
+        <div class="watchlist-card">
+
+            <div class="stock-top">
+
+                <div>
+                    <h3>Larsen & Toubro</h3>
+                    <span>LT.NS</span>
+                </div>
+
+                <div class="stock-icon">
+                    L
+                </div>
+
+            </div>
+
+            <div class="stock-price">
+                ₹<span>—</span>
+            </div>
+
+            <div class="stock-info">
+
+                
+
+                <div>
+                    <small>Confidence</small>
+                    <strong>—</strong>
+                </div>
+
+            </div>
+
+            <button
+                class="analyze-stock"
+                onclick="analyzeWatchlistStock('LT.NS')">
+
+                Analyze
+
+            </button>
+
+        </div>
+
+
+        <!-- 9. BHARTI AIRTEL -->
+
+        <div class="watchlist-card">
+
+            <div class="stock-top">
+
+                <div>
+                    <h3>Bharti Airtel</h3>
+                    <span>BHARTIARTL.NS</span>
+                </div>
+
+                <div class="stock-icon">
+                    B
+                </div>
+
+            </div>
+
+            <div class="stock-price">
+                ₹<span>—</span>
+            </div>
+
+            <div class="stock-info">
+
+                
+
+                <div>
+                    <small>Confidence</small>
+                    <strong>—</strong>
+                </div>
+
+            </div>
+
+            <button
+                class="analyze-stock"
+                onclick="analyzeWatchlistStock('BHARTIARTL.NS')">
+
+                Analyze
+
+            </button>
+
+        </div>
+
+
+        <!-- 10. TATA MOTORS -->
+
+        <div class="watchlist-card">
+
+            <div class="stock-top">
+
+                <div>
+                    <h3>Tata Motors</h3>
+                    <span>TATAMOTORS.NS</span>
+                </div>
+
+                <div class="stock-icon">
+                    T
+                </div>
+
+            </div>
+
+            <div class="stock-price">
+                ₹<span>—</span>
+            </div>
+
+            <div class="stock-info">
+
+               
+                <div>
+                    <small>Confidence</small>
+                    <strong>—</strong>
+                </div>
+
+            </div>
+
+            <button
+                class="analyze-stock"
+                onclick="analyzeWatchlistStock('TATAMOTORS.NS')">
+
+                Analyze
+
+            </button>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+</section>
+
+    <div class="container">
+
+    <div class="container">
+
+        <h1>Algorithmic Trading Simulator</h1>
+
+        <p class="subtitle">
+            Backtest a Moving Average Trading Strategy
+        </p>
+
+
+        <!-- INPUT SECTION -->
+
+        <div class="card">
+
+            <h2>Backtest Settings</h2>
+
+            <div class="form-grid">
+
+                <div class="form-group">
+
+                    <label>
+                        Stock Ticker
+                    </label>
+
+                    <input
+                        type="text"
+                        id="ticker"
+                        value="RELIANCE.NS"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Initial Capital
+                    </label>
+
+                    <input
+                        type="number"
+                        id="capital"
+                        value="100000"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Start Date
+                    </label>
+
+                    <input
+                        type="date"
+                        id="startDate"
+                        value="2024-01-01"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        End Date
+                    </label>
+
+                    <input
+                        type="date"
+                        id="endDate"
+                        value="2026-01-01"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Short Moving Average
+                    </label>
+
+                    <input
+                        type="number"
+                        id="shortWindow"
+                        value="20"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Long Moving Average
+                    </label>
+
+                    <input
+                        type="number"
+                        id="longWindow"
+                        value="50"
+                    >
+
+                </div>
+
+            </div>
+
+
+            <button
+                id="runButton"
+                onclick="runBacktest()">
+
+                Run Backtest
+
+            </button>
+
+        </div>
+
+
+        <!-- LOADING -->
+
+        <div id="loading"
+             class="loading hidden">
+
+            Running backtest...
+
+        </div>
+
+
+        <!-- RESULTS -->
+
+        <div id="results"
+             class="hidden">
+
+            <h2>Backtest Results</h2>
+
+
+            <div class="results-grid">
+
+                <div class="result-card">
+
+                    <h3>Initial Capital</h3>
+
+                    <p id="initialCapital">
+                        -
+                    </p>
+
+                </div>
+
+
+                <div class="result-card">
+
+                    <h3>Final Value</h3>
+
+                    <p id="finalValue">
+                        -
+                    </p>
+
+                </div>
+
+
+                <div class="result-card">
+
+                    <h3>Profit / Loss</h3>
+
+                    <p id="profit">
+                        -
+                    </p>
+
+                </div>
+
+
+                <div class="result-card">
+
+                    <h3>Return</h3>
+
+                    <p id="returnPercent">
+                        -
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- CHARTS -->
+             <!-- TRADING SIGNAL -->
+
+<div class="card signal-card">
+
+    <h2>Trading Recommendation</h2>
+
+    <div class="signal-result">
+
+        <div id="signalDecision" class="signal-decision">
+            —
+        </div>
+
+        <div class="signal-confidence">
+            Confidence:
+            <span id="signalConfidence">—</span>
+        </div>
+
+    </div>
+
+    <div class="signal-details">
+
+        <p>
+            <strong>RSI:</strong>
+            <span id="signalRSI">—</span>
+        </p>
+
+        <p>
+            <strong>MACD:</strong>
+            <span id="signalMACD">—</span>
+        </p>
+
+        <p>
+            <strong>MACD Signal:</strong>
+            <span id="signalMACDSignal">—</span>
+        </p>
+
+    </div>
+
+    <div class="signal-reasons">
+
+        <h3>Why this signal?</h3>
+
+        <ul id="signalReasons"></ul>
+
+    </div>
+
+</div>
+
+<div class="card">
+
+    <h2>Price & Moving Average Chart</h2>
+
+    <canvas id="priceChart"></canvas>
+
+</div>
+
+
+<div class="card">
+
+    <h2>Portfolio Performance</h2>
+
+    <canvas id="portfolioChart"></canvas>
+
+</div>
+
+
+            <!-- ANALYTICS -->
+
+            <div class="card">
+
+                <h2>Performance Analytics</h2>
+                
+
+                <div class="analytics-grid">
+
+                    <div>
+                        <strong>CAGR</strong>
+                        <span id="cagr">-</span>
+                    </div>
+
+                    <div>
+                        <strong>Max Drawdown</strong>
+                        <span id="drawdown">-</span>
+                    </div>
+
+                    <div>
+                        <strong>Volatility</strong>
+                        <span id="volatility">-</span>
+                    </div>
+
+                    <div>
+                        <strong>Sharpe Ratio</strong>
+                        <span id="sharpe">-</span>
+                    </div>
+
+                    <div>
+                        <strong>Total Trades</strong>
+                        <span id="totalTrades">-</span>
+                    </div>
+
+                    <div>
+                        <strong>Win Rate</strong>
+                        <span id="winRate">-</span>
+                    </div>
+
+                    <div>
+                        <strong>Best Trade</strong>
+                        <span id="bestTrade">-</span>
+                    </div>
+
+                    <div>
+                        <strong>Worst Trade</strong>
+                        <span id="worstTrade">-</span>
+                    </div>
+
+                    <div>
+                        <strong>Buy & Hold Return</strong>
+                        <span id="buyHold">-</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- TRADES -->
+
+            <div class="card">
+
+                <h2>Trade History</h2>
+
+                <div class="table-container">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+
+                                <th>Date</th>
+                                <th>Action</th>
+                                <th>Price</th>
+                                <th>Quantity</th>
+                                <th>Transaction Cost</th>
+
+                            </tr>
+
+                        </thead>
+
+                        <tbody id="tradeTable">
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+            </div>
+
+    </main>
+
+</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>
